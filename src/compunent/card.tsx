@@ -2,14 +2,27 @@ import { use } from "react";
 import type { type as CardType } from "../type"; 
 
 
-function CardList({ cardPromise }: { cardPromise: Promise<CardType[]> }) {
+
+function CardList({
+  cardPromise,     
+  selectedStack,    
+  onAdd,             
+  onRemove,          
+}: {
+  cardPromise: Promise<CardType[]>;
+  selectedStack: CardType[];
+  onAdd: (item: CardType) => void;
+  onRemove: (id: string) => void;
+}) {
 
   const items = use(cardPromise);
 
   return (
      
     <div className="grid grid-cols-1 gap-5 py-5 pl-70 pr-20 md:grid-cols-2 lg:grid-cols-3">
-  {items.map((item) => (
+  {items.map((item) => {
+    const isSelected = selectedStack.some((i) => i.id === item.id);
+    return (
     <div
       key={item.id}
       className="group rounded-lg border border-gray-200
@@ -29,7 +42,7 @@ function CardList({ cardPromise }: { cardPromise: Promise<CardType[]> }) {
           alt={item.name}
           width="50"
           height="50"
-          className="h-[50px] w-[50px] object-contain"
+          className="h-12.5 w-12.5 object-contain"
         />
 
         <span
@@ -61,7 +74,7 @@ function CardList({ cardPromise }: { cardPromise: Promise<CardType[]> }) {
       <p
         className="
           mt-2
-          min-h-[40px]
+          min-h-10
           text-xs
           leading-5
           text-gray-500
@@ -88,11 +101,13 @@ function CardList({ cardPromise }: { cardPromise: Promise<CardType[]> }) {
       <p className="mt-2 text-xs text-gray-600">
         <b className="font-semibold text-gray-800">
         </b>{" "}
+        
         {item.rating} ⭐
       </p>
      </div>
       {/* Select Button */}
       <button
+      onClick={() => (isSelected ? onRemove(item.id): onAdd(item))}
         className="
           mt-4
           w-full
@@ -107,10 +122,11 @@ function CardList({ cardPromise }: { cardPromise: Promise<CardType[]> }) {
           active:scale-[0.98]
         "
       >
-        Select
+        {isSelected ? "Remove from Stack" : "Add to Stack"}
       </button>
     </div>
-  ))}
+    )
+  })}
 </div>
   );
 }

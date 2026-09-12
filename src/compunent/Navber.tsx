@@ -2,7 +2,7 @@ import { useState } from "react";
 import Logo from "../assets/logo-text.png";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen] = useState(false);
 
   return (
     <nav className="container mx-auto px-4 py-4 relative">
