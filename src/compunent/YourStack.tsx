@@ -2,16 +2,18 @@ import type { type as CardType } from "../type";
 
 function YourStack({stack, onRemove, onRemoveAll}: {stack:CardType[]; onRemove: (id: string) => void; onRemoveAll: () => void;}){
    return(
-    <div className="border-gray-200 rounded-xl p-5 sticky top-5">
-        <h2>Your Stack</h2>
+    <div className="sticky top-5 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+        <h2 className="text-base font-bold text-slate-900">Your Stack</h2>
         {stack.length === 0 ? (
             <div>
-                <p className="text-gray-500">No Technology Selected</p>
-                <p className="text-gray-500">Your stack is empty</p>
+                <p className="mt-1 text-sm text-slate-400">No technologies selected yet.</p>
+                <div className="mt-4 flex h-[66px] items-center justify-center rounded-xl border border-dashed border-slate-200">
+                    <p className="text-xs text-slate-400">Your stack is empty.</p>
+                </div>
             </div>
         ):(
         <>
-        <p className="text-gray-500">{stack.length} Technology Selected</p>
+        <p className="mt-1 text-sm text-slate-400">{stack.length} Technology Selected</p>
                 {stack.map((item) => (
                     <div key={item.id} className="flex items-center justify-between py-2 border-b border-gray-200">
                         <img src={item.icon} alt={item.name} className="h-7.5 w-7.5" />
