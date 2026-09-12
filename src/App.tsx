@@ -2,6 +2,7 @@ import Navbar from "./compunent/Navber.jsx"
 import Banner from "./compunent/Banner.js"
 import { Suspense, } from "react"
 import CardList from "./compunent/card.js"
+import YourStack from "./compunent/YourStack.js"
 
 import './App.css'
 import type { type } from "./type.js"
@@ -25,7 +26,7 @@ function App() {
       </Suspense>
         </div>
         <div style={{flex: 1}}>
-
+          <YourStack  stack={selectedStack} onRemove={removeFromStack} onRemoveAll={removeAll}/>
         </div>
       </div>
     </>

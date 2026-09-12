@@ -12,10 +12,7 @@ function CardList({ cardPromise }: { cardPromise: Promise<CardType[]> }) {
   {items.map((item) => (
     <div
       key={item.id}
-      className="
-        group
-        rounded-lg
-        border border-gray-200
+      className="group rounded-lg border border-gray-200
         bg-white
         p-5
         shadow-sm
