@@ -2,7 +2,7 @@ import { useState } from "react";
 import Logo from "../assets/logo-text.png";
 
 const Navbar = () => {
-  const [isMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <nav className="container mx-auto px-4 py-4 relative">
@@ -18,7 +18,7 @@ const Navbar = () => {
         </div>
 
        
-        <ul className="hidden md:flex gap-8 font-medium text-[#475569] md:order-2">
+        <ul className="hidden gap-8 font-medium text-[#475569] md:order-2 md:flex">
           <li className="text-[#DB2777] font-semibold cursor-pointer">Home</li>
           <li className="cursor-pointer">Technologies</li>
           <li className="cursor-pointer">Projects</li>
@@ -27,13 +27,22 @@ const Navbar = () => {
         </ul>
 
         
-        <div className="order-3 flex items-center gap-3">
+        <div className="order-3 flex items-center gap-1 sm:gap-3">
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen((open) => !open)}
+            className="rounded-md p-2 text-xl text-[#334155] md:hidden"
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMenuOpen}
+          >
+            {isMenuOpen ? "×" : "☰"}
+          </button>
     
-          <button className="text-[#334155]  px-4 py-1.5 md:px-6 md:py-2.5 text-sm md:text-base font-medium hover:opacity-90 ">
+          <button className="px-2 py-1.5 text-sm font-medium text-[#334155] hover:opacity-90 sm:px-4 md:px-6 md:py-2.5 md:text-base">
             Sing In
           </button>
           
-          <button className="text-white bg-[#D91B7E] rounded-full px-4 py-1.5 md:px-6 md:py-2.5 text-sm md:text-base font-medium shadow-sm hover:opacity-90 ">
+          <button className="rounded-full bg-[#D91B7E] px-3 py-1.5 text-sm font-medium text-white shadow-sm hover:opacity-90 sm:px-4 md:px-6 md:py-2.5 md:text-base">
             Sign Up
           </button>
           

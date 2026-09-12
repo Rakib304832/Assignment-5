@@ -19,7 +19,7 @@ function CardList({
 
   return (
      
-    <div className="grid grid-cols-1 gap-5 py-5 pl-70 pr-20 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-1 gap-5 py-5 sm:grid-cols-2 lg:grid-cols-3">
   {items.map((item) => {
     const isSelected = selectedStack.some((i) => i.id === item.id);
     return (
@@ -82,7 +82,7 @@ function CardList({
       >
         {item.description}
       </p>
-      <div className="flex justify-between container mx-auto">
+      <div className="container mx-auto flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
       {/* Category */}
       <p className="mt-4 text-xs text-gray-600">
         <b className="font-semibold text-gray-800">

@@ -3,10 +3,10 @@ import BannerImage from "../assets/banner-stack.png";
 const Banner = () => {
   return (
     <>
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-10 py-10">
+      <div className="container mx-auto flex flex-col items-center gap-8 px-4 py-8 sm:gap-10 sm:py-10 md:flex-row">
         {/* Banner Content */}
         <div className="flex-1">
-          <h1 className="text-[#0F172A] font-extrabold text-4xl md:text-5xl leading-tight py-6">
+          <h1 className="py-4 text-4xl font-extrabold leading-tight text-[#0F172A] sm:py-6 md:text-5xl">
             Build Your Ideal{" "}
             <br />
             <span className="bg-linear-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED] bg-clip-text text-transparent">
@@ -14,7 +14,7 @@ const Banner = () => {
             </span>
           </h1>
 
-          <p className="text-[#475569] pb-8 text-lg md:text-xl leading-relaxed">
+          <p className="pb-6 text-lg leading-relaxed text-[#475569] md:pb-8 md:text-xl">
             Explore frontend, backend, database, and tooling options,
             compare them side by side, and put together the stack that fits
             your next project.
@@ -42,14 +42,14 @@ const Banner = () => {
         </div>
       </div>
 
-      <div className="pl-70">
-        <h2 className="text-3xl font-bold mt-10 text-center md:text-left">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="mt-8 text-center text-3xl font-bold md:mt-10 md:text-left">
           Explore the
           <span className="bg-linear-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED] bg-clip-text text-transparent">
             Technologies
           </span>
         </h2>
-        <p>Pick one technology per caragory to bulild your ideal stack</p>
+        <p className="text-center text-sm text-slate-500 md:text-left">Pick one technology per caragory to bulild your ideal stack</p>
       </div>
     </>
   );

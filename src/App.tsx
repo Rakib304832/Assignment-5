@@ -29,8 +29,8 @@ function App() {
     <>
       <Navbar />
       <Banner />
-      <div className="flex gap-6 p-5">
-        <div style={{flex: 3}}>
+      <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-5 sm:px-6 lg:flex-row lg:px-8">
+        <div className="min-w-0 lg:flex-[3]">
           <Suspense fallback={"Lodding..."}>
         <CardList
           cardPromise={cardPromise}
@@ -40,7 +40,7 @@ function App() {
         />
       </Suspense>
         </div>
-        <div style={{flex: 1}}>
+        <div className="min-w-0 lg:flex-1">
           <YourStack  stack={selectedStack} onRemove={removeFromStack} onRemoveAll={removeAll}/>
         </div>
       </div>
