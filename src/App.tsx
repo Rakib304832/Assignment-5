@@ -4,6 +4,7 @@ import { Suspense, useState} from "react"
 import CardList from "./compunent/card"
 import YourStack from "./compunent/YourStack"
 import type { type as CardType} from "./type"
+import Footer from "./compunent/footer"
 
 
 const cardItem = async (): Promise<CardType[]> => {
@@ -44,6 +45,7 @@ function App() {
           <YourStack  stack={selectedStack} onRemove={removeFromStack} onRemoveAll={removeAll}/>
         </div>
       </div>
+      <Footer/>
     </>
   )
 }
