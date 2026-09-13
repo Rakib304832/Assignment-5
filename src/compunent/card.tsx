@@ -3,6 +3,7 @@ import type { type as CardType } from "../type";
 
 
 
+
 function CardList({
   cardPromise,     
   selectedStack,    
@@ -18,8 +19,8 @@ function CardList({
   const items = use(cardPromise);
 
   return (
-     
-    <div className="grid grid-cols-1 gap-5 py-5 sm:grid-cols-2 lg:grid-cols-3">
+     <div className="pl-2">
+    <div className="grid w-full grid-cols-1 gap-5  py-5 sm:grid-cols-2 lg:grid-cols-3">
   {items.map((item) => {
     const isSelected = selectedStack.some((i) => i.id === item.id);
     return (
@@ -127,6 +128,7 @@ function CardList({
     </div>
     )
   })}
+</div>
 </div>
   );
 }
