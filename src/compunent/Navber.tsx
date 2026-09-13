@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="container mx-auto px-4 py-4 relative">
+    <nav className="container sticky top-0 z-50 bg-white  mx-auto px-4 py-4 ">
    
 
       <div className="flex justify-between items-center">

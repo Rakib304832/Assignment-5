@@ -19,22 +19,22 @@ function CardList({
   const items = use(cardPromise);
 
   return (
-     <div className="pl-2">
+     <div className="">
     <div className="grid w-full grid-cols-1 gap-5  py-5 sm:grid-cols-2 lg:grid-cols-3">
   {items.map((item) => {
     const isSelected = selectedStack.some((i) => i.id === item.id);
     return (
     <div
       key={item.id}
-      className="group rounded-lg border border-gray-200
+      className={`group rounded-lg border ${ isSelected ? "border-pink-500" : "border-gray-200"}
         bg-white
         p-5
         shadow-sm
         transition-all duration-200
         hover:-translate-y-1
         hover:border-gray-300
-        hover:shadow-md
-      "
+        hover:shadow-md`
+      }
     >
       {/* Icon + Badge */}
       <div className="flex items-start justify-between">
